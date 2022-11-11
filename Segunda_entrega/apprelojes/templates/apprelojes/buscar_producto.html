@@ -1,0 +1,15 @@
+{% extends 'apprelojes/plantilla_base.html' %} {% block contenido %}
+
+<form action="{% url 'resultados_busqueda_productos' %}" method="GET">
+  <h2>Buscar producto</h2>
+  <p>
+    Nombre del curso: <input type="text" name="nombre_curso" />
+    <input type="submit" value="Buscar" />
+  </p>
+</form>
+{% endblock %} {% block head %} {% load static %}
+<link
+  rel="stylesheet"
+  href="{% static 'apprelojes/css/formulariosPost.css' %}"
+/>
+{% endblock %}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static%}
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Watch Website Tempalte Free Download | Smarteyeapps.com</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'apprelojes/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'apprelojes/css/fontawsom-all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'apprelojes/css/style.css' %}"
+    />
+    <link rel="shortcut icon" href="{% static 'apprelojes/assets/fav.jpg' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'apprelojes/assets/fav.png' %}"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <!----- ############## Header ############### ----->
+
+    <div class="header-cover">
+      <header id="menu-jk" class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-3 col-md-3 logo">
+              <img src="{% static 'apprelojes/assets/logo.png' %}" alt="" />
+              <a data-toggle="collapse" data-target="#menu" href="#menu"
+                ><i class="fas d-block d-md-none small-menu fa-bars"></i
+              ></a>
+            </div>
+            <div id="menu" class="col-xl-7 col-md-9 d-none d-md-block nav">
+              <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'categoria' id=1 %}">Hombre</a></li>
+                <li><a href="{% url 'categoria' id=2 %}">Mujer</a></li>
+                <li><a href="{% url 'categoria' id=3 %}">Niño</a></li>
+                <li><a href="{% url 'categoria' id=4 %}">Niña</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-2 d-none d-xl-block download">
+              <button class="btn btn-primary">Ordena Online</button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!----- ############# Slider ################ ----->
+    <div class="slider container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mx-auto detail">
+            <h2>¡Nuestros relojes te encantarán!</h2>
+
+            <button class="btn btn-primary">Comencemos</button>
+
+            <div class="img-cover">
+              <img
+                src="{% static 'apprelojes/assets/smartwatch-png-3.png' %}"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--*************** Key Features Here ***************-->
+
+    <section class="key-features container-fluid">
+      <div class="container">
+        <div class="session-title row">
+          <h2>Ventajas principales</h2>
+        </div>
+        <div class="serv-row row">
+          <div class="col-md-4">
+            <div class="serv-col">
+              <div class="icon">
+                <i class="far fa-heart"></i>
+              </div>
+              <div class="detail">
+                <h4>Servicio altamente calificado</h4>
+                <p>
+                  En caso que requieras un servicio más personalizado, escribe a
+                  nuestro chat y con gusto te ayudaremos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="serv-col">
+              <div class="icon">
+                <i class="far fa-comments"></i>
+              </div>
+              <div class="detail">
+                <h4>Soporte 24x7</h4>
+                <p>
+                  Estamos para ti en todo momento, comunicate con nosotros a
+                  través de nuestros canales.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="serv-col">
+              <div class="icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <div class="detail">
+                <h4>Mejores precios</h4>
+                <p>
+                  Siempre encontrarás los precios más competitivos en nuestra
+                  tienda, además de unos descuentos increíbles
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--*************** Our Products Starts Here ***************-->
+
+    <div id="products" class="our-products container-fluid">
+      <div class="container">
+        <div class="session-title">
+          <h2>Nuestros productos</h2>
+        </div>
+        <div class="product-roew row">
+          {% for product in diccionario_de_productos %}
+
+          <div class="col-md-3" style="cursor: pointer">
+            <div class="pro-cover">
+              <div class="product-img">
+                <img
+                  src="{% static 'apprelojes/assets/'%}{{product.url_nueva_imagen}}"
+                  alt=""
+                />
+              </div>
+              <div class="product-detail">
+                <h4>{{product.nombre}}</h4>
+                <p>{{product.categoria.nombre}}</p>
+                <h2>$ {{product.precio}}</h2>
+                <p>{{product.descuento}}% OFF</p>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!--*************** Testimonial  Starts Here *************** -->
+    <section id="reviews" class="customer-serv">
+      <div class="container">
+        <div class="row session-title">
+          <h2>Usuarios felices</h2>
+        </div>
+
+        <div class="row ro-clo">
+          {% for comentario in comentarios %}
+          <div
+            data-anijs="if: scroll, on: window, do: bounceInLeft animated, before: scrollReveal"
+            class="col-12 col-md-6 col-lg-4"
+          >
+            <div class="shado-2 card-b">
+              <p>
+                {{comentario.comentario}},
+                <strong
+                  >{{comentario.nombre_usuario}}
+                  {{comentario.apellido_usuario}}</strong
+                >
+              </p>
+            </div>
+            <div class="cust-det row">
+              <div class="col-sm-4 col-4 star-par">
+                <ul class="stars">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 glink">
+            <ul>
+              <li>
+                <a href="{% url 'home' %}"
+                  ><i class="fas fa-angle-double-right"></i>Home</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'categoria' id=1 %}"
+                  ><i class="fas fa-angle-double-right"></i>Hombre</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'categoria' id=2 %}"
+                  ><i class="fas fa-angle-double-right"></i>Mujer</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'categoria' id=3 %}"
+                  ><i class="fas fa-angle-double-right"></i>Niño</a
+                >
+              </li>
+              <li>
+                <a href="{% url 'categoria' id=4 %}"
+                  ><i class="fas fa-angle-double-right"></i>Niña</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copy">
+      <div class="container">
+        <a href="https://www.smarteyeapps.com/"
+          >2015 &copy; All Rights Reserved | Designed and Developed by
+          Smarteyeapps</a
+        >
+
+        <span>
+          <a><i class="fab fa-github"></i></a>
+          <a><i class="fab fa-google-plus-g"></i></a>
+          <a><i class="fab fa-pinterest-p"></i></a>
+          <a><i class="fab fa-twitter"></i></a>
+          <a><i class="fab fa-facebook-f"></i></a>
+        </span>
+      </div>
+    </div>
+  </body>
+
+  <script src="{% static '/apprelojes/js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static '/apprelojes/js/popper.min.js' %}"></script>
+  <script src="{% static '/apprelojes/js/bootstrap.min.js' %}"></script>
+  <script src="{% static '/apprelojes/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+  <script src="{% static '/apprelojes/js/script.js' %}"></script>
+</html>

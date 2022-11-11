@@ -1,0 +1,34 @@
+.container-productos {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.container-productos ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item-producto {
+  width: 23%;
+  text-align: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.precio-producto {
+  font-weight: bold;
+}
+
+.precio-producto::before {
+  content: "$";
+  margin-right: 3px;
+}
+
+.descuento-producto {
+  font-weight: bold;
+  color: rgb(4, 165, 4);
+}
+
+.descuento-producto::after {
+  content: "% OFF";
+}

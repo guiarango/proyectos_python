@@ -1,0 +1,14 @@
+{% extends 'apprelojes/plantilla_base.html' %} {% block contenido %}
+
+<form action="" method="POST">
+  <h2>Formulario Creación de categoría</h2>
+
+  {% csrf_token %} {{formulario.as_p}}
+  <input type="submit" value="Crear categoría" />
+</form>
+{% endblock %} {% block head %} {% load static %}
+<link
+  rel="stylesheet"
+  href="{% static 'apprelojes/css/formulariosPost.css' %}"
+/>
+{% endblock %}

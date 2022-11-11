@@ -1,0 +1,61 @@
+form {
+  margin: 30px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="number"],
+label {
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: rgb(6, 128, 87);
+  color: white;
+  padding: 8px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+}
+
+p {
+  margin: 5px 0;
+}
+
+@media (min-width: 800px) {
+  form {
+    margin: 40px auto;
+    width: 50%;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  label {
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    background-color: rgb(6, 128, 87);
+    color: white;
+    padding: 8px;
+    margin-top: 20px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    cursor: pointer;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}

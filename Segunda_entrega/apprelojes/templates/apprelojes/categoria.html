@@ -1,0 +1,25 @@
+{% extends 'apprelojes/plantilla_base.html' %} {% block contenido %}
+<div class="container-productos">
+  <ul>
+    {% for product in diccionario_de_productos %}
+
+    <li class="item-producto">
+      {% load static %}
+      <img src="{% static 'apprelojes/assets/'%}{{product.url_nueva_imagen}}" />
+
+      <div class="datos-producto">
+        <p class="nombre-producto">{{product.nombre}}</p>
+        <p class="nombre-producto">{{product.categoria.nombre}}</p>
+      </div>
+
+      <div class="datos-precio">
+        <p class="precio-producto">{{product.precio}}</p>
+        <p class="descuento-producto">{{product.descuento}}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %} {% block head %} {% load static %}
+<link rel="stylesheet" href="{% static 'apprelojes/css/categorias.css' %}" />
+{% endblock %}

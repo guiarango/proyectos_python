@@ -1,0 +1,23 @@
+# Ecommerce de relojes
+
+El proyecto busca simular la creación de un ecommerce básico de relojes. Utilizando el framework Django para la gestión de Front y Back del proyecto y sus aplicaciones.
+
+## Rutas a utilizar
+
+1. '/':
+   Carga el template "Index" y utiliza 2 modelos para poder cargar: 4 productos de muestra y 3 comentarios acerca de la página.
+
+2. 'categoria/<str:id>/':
+   Es accedido mediante los links del Navbar y desplegarán los productos según la categoría que hayas seleccionado.
+
+3. 'crear_producto/':
+   Desplegará un formulario para poder crear un producto (Incluida una imagen que tú selecciones) en el modelo de productos.
+
+4. 'crear_categoria/':
+   Desplegará un formulario para poder crear un categoría dentro del modelo de categorías.
+
+5. 'crear_comentario/':
+   Desplegará un formulario para poder crear un comentario dentro del modelo de comentarios.
+
+6. 'buscar_producto/':
+   Desplegará un formulario para poder consultar un producto. La consulta buscará las coincidencias con los nombres de producto dentro de la base de datos, y si encuentra alguno, lo desplegará dentro de la ruta 'buscar_producto/resultado/'.
